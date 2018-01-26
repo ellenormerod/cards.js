@@ -84,7 +84,9 @@ var cards = (function() {
 				height:opt.cardSize.height,
 				"background-image":'url('+ opt.cardsUrl + ')',
 				position:'absolute',
-				cursor:'pointer'	
+				cursor:'pointer'	,
+				right: '5px',
+				top: '5px'
 			}).addClass('card').data('card', this).appendTo($(table));
 			this.showCard();
 			this.moveToFront();
@@ -244,16 +246,17 @@ var cards = (function() {
 	Deck.prototype.extend({
 		calcPosition : function(options) {
 			options = options || {};
-			var left = Math.round(this.x-opt.cardSize.width/2, 0);
-			var top = Math.round(this.y-opt.cardSize.height/2, 0);
-			var condenseCount = 6;
+			// var left = Math.round(this.x-opt.cardSize.width/2, 0);
+			// var top = Math.round(this.y-opt.cardSize.height/2, 0);
+			// var condenseCount = 6;
 			for (var i=0;i<this.length;i++) {
-				if (i > 0 && i % condenseCount == 0) {
-					top-=1;
-					left-=1;
-				}
-				this[i].targetTop = top;
-				this[i].targetLeft = left;
+				// if (i > 0 && i % condenseCount == 0) {
+				// 	top-=1;
+				// 	// left-=1;
+				// }
+				// console.log(top, left)
+				this[i].targetTop = 5;
+				this[i].targetRight = 5;
 			}
 		},
 		

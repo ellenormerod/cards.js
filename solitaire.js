@@ -8,8 +8,8 @@ deck.addCards(cards.all);
 //put deck on table
 deck.render({immediate:true})
 
-upperhand = new cards.Hand({faceUp: false, y:60});
-lowerhand = new cards.Hand({faceUp: true, y: 340});
+upperhand = new cards.Hand({faceUp: false});
+lowerhand = new cards.Hand({faceUp: true});
 
 discardPile = new cards.Deck({faceUp: true});
 discardPile.x += 50;
@@ -36,4 +36,9 @@ lowerhand.click(card => {
     discardPile.render();
     lowerhand.render()
   }
+})
+
+//when new game button clicked create a new game
+$('#new-game').click(() => {
+  console.log('new game clicked')
 })
